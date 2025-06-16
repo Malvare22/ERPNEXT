@@ -2,7 +2,7 @@
 
 set -e
 
-CONTAINER_NAME=frappe_docker-backend-1
+CONTAINER_NAME=erpnext-backend-1
 BACKUP_DIR=./backup
 
 echo "Copiando backups al contenedor..."
