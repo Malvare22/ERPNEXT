@@ -19,8 +19,8 @@ docker exec -it $CONTAINER_NAME bash -c "
 "
 
 echo "Reiniciando la stack..."
-sudo docker compose down
-sudo docker compose -f pwd.yml up -d
+docker compose down
+docker compose -f pwd.yml up -d
 
 echo "¡Restauración y reinicio completados!"
 
