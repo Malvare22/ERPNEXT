@@ -15,7 +15,8 @@ docker exec -it $CONTAINER_NAME bash -c "
   tar -xf /home/frappe/frappe-bench/sites/frontend/private/backups/private-files.tar -C /home/frappe/frappe-bench/sites/frontend/private/backups/ &&
   bench --site frontend migrate &&
   bench --site frontend clear-cache &&
-  bench --site frontend  set-config server_script_enabled true
+  bench --site frontend  set-config server_script_enabled true &&
+  rm -rf /home/frappe/frappe-bench/sites/frontend/private/backups/*
 "
 
 echo "Reiniciando la stack..."
@@ -23,4 +24,3 @@ docker compose down
 docker compose -f pwd.yml up -d
 
 echo "¡Restauración y reinicio completados!"
-
